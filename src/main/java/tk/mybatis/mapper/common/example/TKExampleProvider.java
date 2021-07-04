@@ -89,7 +89,7 @@ public class TKExampleProvider {
   public static String deleteByExample(ProviderContext providerContext) {
     return SqlScript.caching(providerContext, (entity, util) ->
       "DELETE FROM " + entity.table()
-        + util.parameterNotNull("Example Criteria cannot be empty")
+        + util.parameterNotNull("Example cannot be null")
         + EXAMPLE_WHERE_CLAUSE);
   }
 
@@ -106,7 +106,7 @@ public class TKExampleProvider {
         return "UPDATE " + entity.table()
           + set(() -> entity.updateColumns().stream().map(
           column -> column.columnEqualsProperty("entity.")).collect(Collectors.joining(",")))
-          + parameterNotNull("Example Criteria cannot be empty")
+          + parameterNotNull("Example cannot be null")
           + UPDATE_BY_EXAMPLE_WHERE_CLAUSE;
       }
     });
@@ -127,7 +127,7 @@ public class TKExampleProvider {
           column -> ifTest(column.notNullTest("entity."),
             () -> column.columnEqualsProperty("entity.") + ",")
         ).collect(Collectors.joining(LF)))
-          + parameterNotNull("Example Criteria cannot be empty")
+          + parameterNotNull("Example cannot be null")
           + UPDATE_BY_EXAMPLE_WHERE_CLAUSE;
       }
     });
