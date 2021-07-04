@@ -10,7 +10,6 @@ import tk.mybatis.mapper.base.CountryMapper;
 import tk.mybatis.mapper.entity.Config;
 import tk.mybatis.mapper.entity.Example;
 
-@Ignore("不支持")
 public class SafeDeleteByFieldTest extends BaseTest {
 
     @Override
@@ -20,6 +19,7 @@ public class SafeDeleteByFieldTest extends BaseTest {
         return config;
     }
 
+    @Ignore("不支持")
     @Test(expected = PersistenceException.class)
     public void testSafeDelete() {
         SqlSession sqlSession = getSqlSession();

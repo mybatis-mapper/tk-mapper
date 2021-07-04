@@ -15,7 +15,7 @@ public class TKEntityColumnFactory implements EntityColumnFactory {
 
   @Override
   public Optional<List<EntityColumn>> createEntityColumn(EntityTable entityTable, EntityField field, Chain chain) {
-    tk.mybatis.mapper.entity.EntityTable tkTable = entityTable.prop(TKTABLE_PROP);
+    tk.mybatis.mapper.entity.EntityTable tkTable = entityTable.getProp(TKTABLE_PROP);
     if (tkTable == null) {
       return chain.createEntityColumn(entityTable, field);
     }

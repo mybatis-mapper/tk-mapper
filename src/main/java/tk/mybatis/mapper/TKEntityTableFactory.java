@@ -48,7 +48,7 @@ public class TKEntityTableFactory implements EntityTableFactory {
     tk.mybatis.mapper.entity.EntityTable tkTable = EntityHelper.getEntityTable(entityClass);
     boolean autoResultMap = tkTable.getEntityClassColumns().stream().filter(column -> column.getTypeHandler() != null).findAny().isPresent();
     return EntityTable.of(entityClass).table(tkTable.getName()).autoResultMap(autoResultMap)
-      .prop(CONFIG_PROP, config).prop(TKTABLE_PROP, tkTable);
+      .setProp(CONFIG_PROP, config).setProp(TKTABLE_PROP, tkTable);
   }
 
 }
