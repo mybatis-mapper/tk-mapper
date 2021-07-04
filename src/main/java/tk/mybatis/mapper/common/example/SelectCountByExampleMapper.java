@@ -44,7 +44,7 @@ public interface SelectCountByExampleMapper<T> {
    * @return
    */
   @Lang(Caching.class)
-  @SelectProvider(type = ExampleProvider.class, method = "countByExample")
+  @SelectProvider(type = TKExampleProvider.class, method = "countByExample")
   int selectCountByExample(Object example);
 
 }

@@ -46,7 +46,7 @@ public interface UpdateByExampleSelectiveMapper<T> {
    * @return
    */
   @Lang(Caching.class)
-  @UpdateProvider(type = ExampleProvider.class, method = "updateByExampleSelective")
+  @UpdateProvider(type = TKExampleProvider.class, method = "updateByExampleSelective")
   int updateByExampleSelective(@Param("entity") T record, @Param("example") Object example);
 
 }

@@ -46,7 +46,7 @@ public interface SelectByExampleMapper<T> {
    * @return
    */
   @Lang(Caching.class)
-  @SelectProvider(type = ExampleProvider.class, method = "selectByExample")
+  @SelectProvider(type = TKExampleProvider.class, method = "selectByExample")
   List<T> selectByExample(Object example);
 
 }

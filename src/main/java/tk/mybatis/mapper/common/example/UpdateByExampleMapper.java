@@ -46,7 +46,7 @@ public interface UpdateByExampleMapper<T> {
    * @return
    */
   @Lang(Caching.class)
-  @UpdateProvider(type = ExampleProvider.class, method = "updateByExample")
+  @UpdateProvider(type = TKExampleProvider.class, method = "updateByExample")
   int updateByExample(@Param("entity") T record, @Param("example") Object example);
 
 }

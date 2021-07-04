@@ -44,7 +44,7 @@ public interface DeleteByExampleMapper<T> {
    * @return
    */
   @Lang(Caching.class)
-  @DeleteProvider(type = ExampleProvider.class, method = "deleteByExample")
+  @DeleteProvider(type = TKExampleProvider.class, method = "deleteByExample")
   int deleteByExample(Object example);
 
 }
